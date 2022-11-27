@@ -1,0 +1,159 @@
+
+
+@@@@@@@
+DAY-1
+@@@@@@@
+
+Containers!!
+
+	Docker Engine
+	
+	Images vs Containers ?
+	
+
+
+Infra-Structure Team :
+
+	Jenkins - Master Slave Configuration!!!
+	
+	Jenkins-Master:
+		
+			Slave1 ===> Build and Create Artifacts for Java Application
+			Slave2 ===> Python
+			Slave3 ===> .Net
+			Slave4 ===> NodeJs
+			Slave5 ===> Angular
+				 50 ===> 
+
+Virtual Machines!!!!
+
+	Jenkins-Master
+	
+		Virtual Machine --> Docker Container Engine 
+
+
+DEV Team :
+
+	DEV-Environment					==> TEST Environment 				==> Prod. Environment
+	(jdk1.8,tomcat8)						QA(jdk1.7,tomcat7)
+	created *.war							UAT
+	(Package: *.war,jdk1.8,tomcat8)			Staging Environment
+	Image - Docker Image 
+	Container Registry (docker hub)
+	AWS EKS
+	Az	AKS
+	GCP
+
+Container Orchestration!  Docker Swarm 
+
+	Monolithic Application Architecture!
+				(vs)
+	Microservice Based Architecture!
+
+Web-Based applications!!!
+
+Monolithic Application Architecture!
+
+Process --> 	
+	E-Commerce :
+		sign-up
+		sign-in
+		search
+		purchase
+		payment
+
+All these process are deployed as single service/application!	(Stateful / Stateless Application)
+
+Microservice Based Architecture!
+Process --> 	
+	E-Commerce :
+		sign-up		--> collect the user data, validate the user data, store in dbase
+		sign-in			v1.0		==> v1.1 validate the user data
+		search
+		purchase
+		payment
+
+All these process are deployed as independent service! === > shd be deployed as containers 
+
+
+	1 service === 1 process ====> Microservice
+	
+DownTime!
+
+Container Orchestrator!!!		Kubernetes
+
+		To Ensure High Availability of containers
+		Quickly revert / rollback the changes 
+		Load-Balancer
+
+Docker Swarm 		vs 			Kubernetes
+
+Docker-Compose -- Manifest File *.yaml to manage multiple containers!
+				*.war
+				tomcat 
+				mysql 
+
+Dockerfile is used to build docker images!
+ 
+Created Multiple Containers :::
+
+docker ps -a
+
+	DEV-Team
+			Stateless	- (*.war/jdk1.8/nginx-1.1.9)  ==
+			
+			Stateful 
+						- (*.war/jdk1.8/nginx-1.1.9)  ==  (Needs some volume)   container-v1.1 - Active Container
+																				container-v1.1 - Passive Container
+
+						- (*.war/jdk1.8/nginx-1.1.9)  ==  (Needs some volume) 	container-v1.1 - Active Container	
+																				(Run Webapp, mysql db)
+
+						- Config files / Secrets / Security Vaults
+						
+Container Pattern 
+
+
+Application Point!!! ===>> 
+
+Kubernetes Architecture!
+	Kubernetes Master & Worker Nodes!
+	
+	
+Next :
+	
+	Installation Process & pre-requisities
+	Kubectl commands with parameters
+	How to config Kubernetes Cluster!
+
+@@@@@@@
+DAY-2
+@@@@@@@
+
+
+Installation Process & pre-requisities
+
+	Install Kubernetes Master and Configure Worker Nodes!
+	
+	Installation :::
+	
+		- 	Minikube
+		-	play with kubernetes
+		-	play with docker
+		-	Kubeadm 
+		-	Using Managed Services ( AWS/Az/GCP )
+		
+		
+Kube-Master	, WN1, WN2 ...100
+
+	Run some Pods 
+		DEV		Namespace 
+		QA
+		UAT
+		PROD 
+		
+Create a POD
+
+Manifest file ---> *.yaml
+
+How to write yaml script for Kubernetes!!!
