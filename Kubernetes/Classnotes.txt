@@ -157,3 +157,77 @@ Create a POD
 Manifest file ---> *.yaml
 
 How to write yaml script for Kubernetes!!!
+
+
+@@@@@@@
+DAY-3
+@@@@@@@
+
+
+Kubernetes is meant for deployments!!!
+
+
+Non-Prod							Prod
+Qa,UAT,Staging						PROD 
+
+
+Build Servers
+
+	Build, create artifacts
+	Build the docker image 
+
+
+Deployment Servers :
+
+Kubernetes	
+			Cluster 
+				WN1.....100
+			DEV
+			QA 
+			UAT 
+			Pre-Prod 			
+			
+			PROD Cluster1 
+			PROD_NS
+
+			PROD Cluster2
+			PROD_NS
+			
+			
+Kube-Master - 
+
+Cluster
+	WN1
+	WN2
+	WN3
+	
+	
+	
+	PODS -->>
+	
+	
+Controller Manager!!
+
+	Replication Controller
+	Replicasets
+	Daemonsets
+	Deployments
+
+
+If the inst is down.
+If we go for any upgrade/rollback of appln.
+
+
+Summary:
+
+	Pods
+		exec
+		expose 
+	RC
+	RS
+	
+	
+Next :
+
+	Daemonsets
+	Deployments
