@@ -69,4 +69,4 @@ kubectl delete pod nginx-pod
 
 
 *******************************************************************
-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
+
