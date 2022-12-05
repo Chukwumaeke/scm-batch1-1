@@ -231,3 +231,128 @@ Next :
 
 	Daemonsets
 	Deployments
+
+@@@@@@@
+DAY-4
+@@@@@@@
+	
+Next :
+
+	Daemonsets
+	Deployments
+
+Volumes:
+	Configmaps
+	secrets
+	
+	
+Difference between : RC & RS
+
+
+Scheduler!!!!
+
+	POD ===> 
+	wn1......wn10
+	
+	Pod1 ==> dbase engine / Volume SSD ==>
+
+Deployments ::
+
+	ZERO Downtime!!!!
+	
+	Types of Deployments:
+	
+	Recreate:  ---> Applicable only in Non-Prod 
+	
+		5 copies of pods 			tomcat-v1.0
+									tomcat-v1.1
+									
+									
+	
+	Rolling Update	-- to ensure zero down. 
+	
+		1 - v1.1
+		2 - v1.1
+		3 - v1.1
+	
+	Canary:	
+									tomcat-v1.1
+		deployment will first done for the specific user group
+				
+		Software Versions : 
+		Beta Version ?		
+		
+		Ecommerce portal::
+								v1.1
+								
+								v1.2 == Beta Version 
+
+	Blue-Green Deployment :
+
+		*Live Production server!!! - v.1.1 	---->>>>	Passive Server - v.1.2(Active)		
+		
+	Migration Project!!!
+	
+	Legacy On-Premises System 							=====>  AWS Cloud Platform
+	*Live Production server!!! - v.1.1						*Live Production server!!! - v.1.1
+	
+DevOps Process
+
+
+	Tomcat -- Appln. server 
+	
+	
+	JavaAppln -- v1.0 -- docker image -- pushed to docker hub
+	JavaAppln -- v1.1 -- docker image -- pushed to docker hub
+	JavaAppln -- v1.2 -- docker image -- pushed to docker hub
+	JavaAppln -- v1.3 -- docker image -- pushed to docker hub
+	
+	
+	
+
+DEV Environment							>>			QA			>>			QAT				>>		PROD
+Build
+Create Docker 					
+Image
+Pacakage
+(*.war, dependencies-nginx/tomcat,
+Configuration_file_QA)
+
+(*.war, dependencies-nginx/tomcat,
+Configuration_file_UAT)
+
+(*.war, dependencies-nginx/tomcat,
+Configuration_file_PROD)
+
+Package:
+(*.war, dependencies-nginx/tomcat)					(*.war, dependencies-nginx/tomcat) - Secrets!
+
+(*.war, dependencies-nginx/tomcat)
+
+(*.war, dependencies-nginx/tomcat)
+
+
+Dbase:
+
+Secrets!
+
+
+Configuration_file_QA
+Configuration_file_UAT
+Configuration_file_PROD
+
+
+Pubished to 
+Docker HUB 
+
+	
+	Host Volumes :::
+		Config_file
+		Secrets
+	
+	
+	Config_Maps
+		Pass some config data :: environment variables, arguments, 
+	Secrets 
+	
+	
